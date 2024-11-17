@@ -1,78 +1,173 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 20px;
+:root {
+  --couleur-or: #bfa181;
+  --couleur-light: #c2b8ad;
+  --couleur-accent: #81bfa1;
+  --couleur-bleu-nuit: #0a1828;
+  --couleur-hover: #5a8570 ;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--couleur-bleu-nuit);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    color: var(--couleur-bleu-nuit);
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    color: var(--couleur-or);
+    text-align: center;
+    margin: 0;
+    font-size: 24px;
 }
 
 table {
-    border-collapse: collapse; 
-    width: 100%; 
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+ 
+th, td {
+    padding: 12px;
+    border: 1px solid var(--couleur-or);
+    text-align: left;
+    color: var(--couleur-light);
 }
 
 th {
-    background-color: #333;
-    color: #fff;
-    text-align: left;
-    padding: 10px;
-}
-
-td {
-    border: 1px solid #333;
-    padding: 10px;
+    background-color: var(--couleur-or);
+    color: var(--couleur-bleu-nuit);
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #1634575a;
 }
 
-.container {
-    width: 300px;
-    margin: 0 auto;
-    border: 1px solid #CCCCCC;
-    padding: 30px;
-    border-radius: 10px;
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--couleur-light);
 }
 
-label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
+strong {
+    color: var(--couleur-light);
+    text-transform: uppercase;
 }
 
-input, select {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.btn {
-    margin-top:10px;
-    display: inline-block;
-    padding: 5px 20px;
-    font-size: 16px;
-    text-align: center;
+a {
     text-decoration: none;
-    cursor: pointer;
-    border: 2px solid #3498db;
-    color: #3498db;
+    color: var(--couleur-light);
+}
+
+a.btn {
+    display: block;
+    width: 150px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: var(--couleur-accent) ;
+    color: var(--couleur-bleu-nuit);
+    text-align: center;
     border-radius: 5px;
-    background-color: #fff;
-    transition: background-color 0.3s ease;
+    transition: 350ms;
+} 
+
+a.btn:hover {
+    background-color: var(--couleur-hover) ;
+    color: white;
+
 }
 
-.btn:hover {
-    background-color: #3498db;
-    color: #fff;
+
+button.btn.red {
+    background-color: #9D4758;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: inherit;
+    width: 150px;
+    transition: 350ms;
+
 }
 
-.btn.red {
-    border: 2px solid #98082a;
-    color: #db3450;
-    
+button.btn.red:hover {
+    background-color: #CC2E2A;
+}
+/* css/style.css */
+
+/*classes*/
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #0a1828;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    color: var(--couleur-or);
+    border: 1px solid var(--couleur-or);
 }
 
-.btn.red:hover {
-    background-color: #db3450;
-    color: #fff;
+.formulaire { 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulaire label {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    color: var(--couleur-or);
+}
+
+.formulaire input[type="text"],
+.formulaire input[type="date"],
+.formulaire select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+    background-color: var(--couleur-light);
+}
+
+.formulaire input[type="submit"] {
+    background-color: var(--couleur-accent);
+    color: var(--couleur-bleu-nuit);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    align-self: center;
+    font-family: inherit;
+    font-size: inherit;
+
+}
+
+.formulaire input[type="submit"]:hover {
+    background-color: var(--couleur-hover);
+    color: white;
+    transition: 350ms;
+
+}
+
+i{
+    color: var(--couleur-or);
+    font-size: 24px;
+
+    &:hover{
+        color: var(--couleur-accent);
+    }
+}
+
+.conteneur-bouton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
