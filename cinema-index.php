@@ -5,44 +5,49 @@ $select = $crud->select('Film', 'titre', 'DESC');
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinéma Paradiso</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <h1>Films à l'affiche</h1>
+    <header>
+        <h1>Films</h1>
+    </header>
     <table>
         <thead>
             <tr>
                 <th>Titre</th>
                 <th>Synopsis</th>
-                <th>Date de sortie</th> 
+                <th>Date de sortie</th>
                 <th>Durée</th>
                 <th>Genre</th>
             </tr>
         </thead>
         <tbody>
             <?php
-                foreach($select  as $row) {
-                    $genre = $crud->selectId("genre", $row['Genre_id']);
+            foreach ($select  as $row) {
+                $genre = $crud->selectId("genre", $row['Genre_id']);
             ?>
-            <tr>
-                <td><a href="cinema-show.php?id=<?= $row['id'];?>"><?= $row['titre'] ?></a></td>
-                <td><?= $row['synopsis'] ?></td>
-                <td><?= $row['date_sortie'] ?></td>
-                <td><?= $row['duree'] ?></td> 
-                <td><?= $genre['nom'] ?></td> 
-            </tr>
+                <tr>
+                    <td><a href="cinema-show.php?id=<?= $row['id']; ?>"><?= $row['titre'] ?></a></td>
+                    <td><?= $row['synopsis'] ?></td>
+                    <td><?= $row['date_sortie'] ?></td>
+                    <td><?= $row['duree'] ?></td>
+                    <td><?= $genre['nom'] ?></td>
+                </tr>
             <?php
-                }
-                ?>
+            }
+            ?>
         </tbody>
     </table>
     <a href="cinema-create.php" class="btn">Nouveau film</a>
 </body>
+
 </html>
 <!-- /*=========================TEST CLASSES=====================================*/
 
