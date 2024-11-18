@@ -5,6 +5,7 @@
   --couleur-bleu-nuit: #0a1828;
   --couleur-hover: #5a8570;
 }
+
 body {
   font-family: Arial, sans-serif;
   background-color: var(--couleur-bleu-nuit);
@@ -62,6 +63,15 @@ strong {
 a {
   text-decoration: none;
   color: var(--couleur-light);
+}
+
+i {
+  color: var(--couleur-or);
+  font-size: 24px;
+
+  &:hover {
+    color: var(--couleur-accent);
+  }
 }
 
 a.btn {
@@ -150,15 +160,6 @@ button.btn.red:hover {
   background-color: var(--couleur-hover);
   color: white;
   transition: 350ms;
-}
-
-i {
-  color: var(--couleur-or);
-  font-size: 24px;
-
-  &:hover {
-    color: var(--couleur-accent);
-  }
 }
 
 .conteneur-bouton {
