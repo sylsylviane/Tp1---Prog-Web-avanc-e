@@ -27,8 +27,15 @@ CREATE TABLE IF NOT EXISTS `Salle` (
   `cinema_id` INT NOT NULL,
   `film_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`cinema_id`) REFERENCES `Cinema`(`id`),
-  FOREIGN KEY (`film_id`) REFERENCES `Film`(`id`)
+  FOREIGN KEY (`cinema_id`) REFERENCES `Cinema`(`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `Film_has_Salle` (
+  `film_id` INT,
+  `salle_id` INT,
+  PRIMARY KEY (`film_id`, `salle_id`),
+  FOREIGN KEY (`film_id`) REFERENCES Film(`id`),
+  FOREIGN KEY (`salle_id`) REFERENCES Salle(`id`)
 );
 
 CREATE TABLE IF NOT EXISTS `cinema`.`Acteur` (
@@ -65,15 +72,6 @@ CREATE TABLE IF NOT EXISTS `cinema`.`Genre` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));
-
--- CREATE TABLE IF NOT EXISTS `cinema`.`Film_has_Genre` (
---   `genre_id` INT,
---   `film_id` INT,
---   PRIMARY KEY (`film_id`, `genre_id`),
---   FOREIGN KEY (`genre_id`) REFERENCES Genre(`id`),
---   FOREIGN KEY (`film_id`) REFERENCES Film(`id`)
--- );
-
 
 INSERT INTO `cinema`.`Film` (`titre`, `synopsis`, `annee_parution`, `duree`) VALUES ('Hérésie', "Après avoir cogné à la mauvaise porte, deux jeunes missionnaires se voient forcées de prouver leur foi lorsqu’elles entrent chez M. Reed (Hugh Grant), un être diabolique qui les piège dans une partie mortelle de chat et de la souris.", '2024-11-08', '1h50');
 
