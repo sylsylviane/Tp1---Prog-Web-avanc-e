@@ -37,10 +37,10 @@ if ($selectId) {
             <h1>Résumé</h1>
         </header>
         <p><strong>Titre : </strong><?= $titre; ?></p>
+        <p><strong>Genre : </strong><?= $genreNom; ?></p>
         <p><strong>Synopsis : </strong><?= $synopsis; ?></p>
         <p><strong>Date de sortie : </strong><?= $date_sortie; ?></p>
         <p><strong>Durée : </strong><?= $duree; ?></p>
-        <p><strong>Genre : </strong><?= $genreNom; ?></p>
         <div class="conteneur-bouton">
             <a href="cinema-edit.php?id=<?= $id; ?>" class="btn">Modifier</a>
             <form action="cinema-delete.php" method="post">
